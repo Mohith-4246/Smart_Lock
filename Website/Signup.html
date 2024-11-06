@@ -1,0 +1,179 @@
+<html>
+ <head>
+  <title>Create Account</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #6a6a72;
+    }
+    .container {
+      display: flex;
+      width: 800px;
+      height: 500px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .left {
+      flex: 1;
+      background: url('/smart_lock.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      font-weight: 500;
+      position: relative;
+    }
+    .left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px 0 0 15px;
+    }
+    .left .content {
+      position: relative;
+      z-index: 1;
+    }
+    .right {
+      flex: 1;
+      background-color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 0 15px 15px 0;
+    }
+    .right h2 {
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+    .right form {
+      display: flex;
+      flex-direction: column;
+    }
+    .right form .input-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .right form .input-group input {
+      width: 48%;
+    }
+    .right form input {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .right form .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .right form .checkbox-group input {
+      margin-right: 10px;
+    }
+    .right form .checkbox-group label {
+      font-size: 0.9em;
+    }
+    .right form .checkbox-group a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .right form button {
+      padding: 10px;
+      background-color: #4a4aff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    .right form .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 15px 0;
+    }
+    .right form .divider::before,
+    .right form .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+    }
+    .right form .divider::before {
+      margin-right: 10px;
+    }
+    .right form .divider::after {
+      margin-left: 10px;
+    }
+    .right form .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: white;
+      color: #757575;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .right form .google-btn img {
+      margin-right: 10px;
+    }
+    .right form .login-link {
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .right form .login-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="left">
+    <div class="content">Let's Get Started!</div>
+   </div>
+   <div class="right">
+    <h2>Create Account</h2>
+    <form action="dashboard.html" method="GET">
+     <div class="input-group">
+      <input placeholder="First name" type="text" required/>
+      <input placeholder="Last name" type="text" required/>
+     </div>
+     <input placeholder="Email" type="email" required/>
+     <input placeholder="Create password" type="password" required/>
+     <div class="checkbox-group">
+      <input id="terms" type="checkbox" required/>
+      <label for="terms">I agree with <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+     </div>
+     <button type="submit">Create Account</button>
+     <div class="divider">OR</div>
+     <div class="google-btn">
+      <img alt="Google logo" height="10" src="./GoogleLogo.png" width="20"/>
+      Sign up with Google
+     </div>
+     <div class="login-link">
+      Already have an account? <a href="/index.html">Log in</a>
+     </div>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f4f9;
+            color: #333;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #4a4aff;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .header .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .header-right .icon {
+            margin-left: 20px;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+
+        .header .btn-logout {
+            background-color: #ff4747;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header .btn-logout:hover {
+            background-color: #ff3333;
+        }
+
+        /* Layout */
+        .dashboard {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            font-size: 1.4em;
+            color: #4a4aff;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #4a4aff;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 15px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            overflow-y: auto;
+        }
+
+        .main-content .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-content .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .card-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .fingerprint-section, .keypad-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .fingerprint-section i,
+        .keypad-section i {
+            font-size: 100px;
+            color: #4a4aff;
+            margin-bottom: 20px;
+        }
+
+        .fingerprint-section p,
+        .keypad-section p {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .main-content .btn {
+            background-color: #4a4aff;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .main-content .btn:hover {
+            background-color: #3737d0;
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            width: 80%;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-panel .btn {
+            padding: 12px 0;
+            background-color: #4a4aff;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .control-panel .btn:hover {
+            background-color: #3737d0;
+        }
+
+        .control-panel .btn i {
+            margin-right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .card-section {
+                flex-direction: column;
+            }
+        }
+
+        .btn{
+            margin-top: 15px;
+        }
+    </style>
+    <title>Smart Lock Dashboard</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Smart Lock Dashboard</div>
+        <div class="header-right">
+            <i class="fas fa-bell icon"></i>
+            <i class="fas fa-user-circle icon"></i>
+            <a href="index.html" class="btn-logout">Logout</a>
+        </div>
+    </div>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="./accessControl.html"><i class="fas fa-lock"></i> Access Control</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-life-ring"></i> Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="card-section">
+                <!-- Fingerprint Section -->
+                <div class="card fingerprint-section">
+                    <h3>Fingerprint Status</h3>
+                    <i class="fas fa-fingerprint"></i>
+                    <p>Fingerprint Match: <strong>85%</strong></p>
+                    <a href="#" class="btn">Unlock with Fingerprint</a>
+                </div>
+
+                <!-- Keypad Section -->
+                <div class="card keypad-section">
+                    <h3>Set Pin</h3>
+                    <i class="fas fa-key"></i>
+                    <p>Enter a New PIN </p>
+                    <a href="#" class="btn">Unlock with PIN</a>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="card control-panel">
+                <h3>Control Panel</h3>
+                <a href="#" class="btn"><i class="fas fa-lock"></i> Lock/Unlock</a>
+                <a href="#" class="btn"><i class="fas fa-fingerprint"></i> Manage Fingerprints</a>
+                <a href="#" class="btn"><i class="fas fa-key"></i> Update PIN Code</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

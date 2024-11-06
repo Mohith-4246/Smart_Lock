@@ -1,0 +1,132 @@
+<html>
+ <head>
+  <title>Access Control</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+    .header {
+        background-color: #003366;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .header a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        padding: 20px;
+    }
+    .sidebar {
+        width: 200px;
+        float: left;
+    }
+    .content {
+        margin-left: 220px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .form-group select, .form-group input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    .chart {
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .table th {
+        background-color: #f2f2f2;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div>
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="#">History</a>
+   </div>
+  </div>
+  <div class="container">
+   <div class="sidebar">
+    <div class="form-group">
+     <label for="experiment">Data 1</label>
+     <select id="experiment">
+      <option value="1">****</option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="metric">Data 2</label>
+     <select id="metric">
+      <option value="rmse">*****</option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="scale">Scale</label>
+     <select id="scale">
+      <option value="linear">Linear</option>
+      <option value="log">Log</option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="view">View By Metric</label>
+     <select id="view">
+      <option value="runs">Runs</option>
+      <option value="tags">Tags</option>
+      <option value="params">Params</option>
+      <option value="metrics">Metrics</option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label for="show">Show</label>
+     <select id="show">
+      <option value="all">All</option>
+      <option value="top5">Top 5</option>
+      <option value="top10">Top 10</option>
+     </select>
+    </div>
+   </div>
+   <div class="content">
+    <div class="chart">
+     <!-- Embedded ThingSpeak Line Chart -->
+     <iframe width="100%" height="250" src="https://thingspeak.mathworks.com/channels/2697390/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="chart">
+     <!-- Embedded ThingSpeak Widget -->
+     <iframe width="100%" height="250" src="https://thingspeak.mathworks.com/channels/2697390/widgets/944418" frameborder="0" allowfullscreen></iframe>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
